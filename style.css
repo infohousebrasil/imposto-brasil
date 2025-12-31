@@ -1,3 +1,4 @@
+/* Custom Design */
 body { overflow-x: hidden; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #0f172a; }
@@ -5,6 +6,7 @@ body { overflow-x: hidden; }
 
 .hidden { display: none; }
 
+/* Animação de Entrada */
 #resultado {
     animation: fadeIn 0.6s ease-out forwards;
 }
@@ -16,10 +18,10 @@ body { overflow-x: hidden; }
 
 canvas { max-width: 100% !important; }
 
-/* Destaque para o link recomendado */
+/* Estilo de destaque dinâmico */
 .link-destaque {
     border-color: #ef4444 !important;
-    background-color: #1e1b4b !important; /* Indigo bem escuro */
+    background-color: #1e1b4b !important;
     transform: scale(1.03);
-    box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.2);
+    box-shadow: 0 10px 20px -5px rgba(239, 68, 68, 0.3);
 }
