@@ -1,19 +1,25 @@
-/* Custom Scrollbar para combinar com o Dark Mode */
-::-webkit-scrollbar { width: 8px; }
+body { overflow-x: hidden; }
+::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #0f172a; }
-::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 10px; }
 
 .hidden { display: none; }
 
 #resultado {
-    animation: fadeIn 0.8s ease-out;
+    animation: fadeIn 0.6s ease-out forwards;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-canvas {
-    max-width: 100% !important;
+canvas { max-width: 100% !important; }
+
+/* Destaque para o link recomendado */
+.link-destaque {
+    border-color: #ef4444 !important;
+    background-color: #1e1b4b !important; /* Indigo bem escuro */
+    transform: scale(1.03);
+    box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.2);
 }
