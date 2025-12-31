@@ -28,33 +28,75 @@
                     CALCULAR
                 </button>
             </div>
+            <p class="text-[10px] text-slate-500 mt-4 text-center uppercase tracking-widest">Cálculos baseados na legislação de 2025</p>
         </div>
 
         <div id="resultado" class="hidden space-y-6">
             
             <div class="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 id="textoDestaque" class="text-slate-900 text-center font-black mb-6 uppercase tracking-tight">O destino do seu suor:</h3>
+                <h3 class="text-slate-900 text-center font-black mb-6 uppercase tracking-tight">O destino do seu suor:</h3>
                 <div class="relative h-[300px] flex justify-center">
                     <canvas id="graficoImposto"></canvas>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-bold text-center">
-                <div class="bg-slate-800 p-5 rounded-2xl border-b-4 border-red-500">
+                <div class="bg-slate-800 p-5 rounded-2xl border-b-4 border-red-500 shadow-xl">
                     <p class="text-[10px] text-slate-500 uppercase">Imposto / Ano</p>
                     <p id="resAno" class="text-xl text-red-500"></p>
                 </div>
-                <div class="bg-slate-800 p-5 rounded-2xl border-b-4 border-orange-500">
+                <div class="bg-slate-800 p-5 rounded-2xl border-b-4 border-orange-500 shadow-xl">
                     <p class="text-[10px] text-slate-500 uppercase">Dias p/ o Governo</p>
                     <p id="resDias" class="text-xl text-orange-500"></p>
                 </div>
-                <div class="bg-slate-800 p-5 rounded-2xl border-b-4 border-blue-500">
-                    <p class="text-[10px] text-slate-500 uppercase">O que sobra real</p>
+                <div class="bg-slate-800 p-5 rounded-2xl border-b-4 border-blue-500 shadow-xl">
+                    <p class="text-[10px] text-slate-500 uppercase">Salário Real</p>
                     <p id="resLiquido" class="text-xl text-blue-400"></p>
                 </div>
             </div>
 
-            <div class="bg-slate-800 rounded-3xl p-6 border border-red-900/20">
+            <div class="bg-slate-800 rounded-3xl p-6 border border-red-900/20 shadow-inner">
                 <h4 id="chamadaVenda" class="text-center text-red-400 font-black mb-6 uppercase tracking-widest text-sm">Ações Recomendadas:</h4>
                 
                 <div id="containerLinks" class="space-y-4">
+                    <a id="cardAltaRenda" href="https://go.hotmart.com/W103598052B" target="_blank" class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-700 hover:border-red-500 transition-all group">
+                        <div class="bg-red-900/20 p-3 rounded-lg group-hover:bg-red-600">
+                            <i class="fas fa-shield-alt text-red-500 group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-white">Blindagem Fiscal e Offshore</p>
+                            <p class="text-[10px] text-slate-500">Aprenda a proteger patrimônio de forma avançada.</p>
+                        </div>
+                    </a>
+
+                    <a id="cardSeguranca" href="https://go.hotmart.com/O103598150J" target="_blank" class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-700 hover:border-emerald-500 transition-all group">
+                        <div class="bg-emerald-900/20 p-3 rounded-lg group-hover:bg-emerald-600">
+                            <i class="fas fa-university text-emerald-500 group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-white">Segurança de Pix e Bancos</p>
+                            <p class="text-[10px] text-slate-500">Evite multas e monitoramento fiscal desnecessário.</p>
+                        </div>
+                    </a>
+
+                    <a id="cardBaixaRenda" href="https://go.hotmart.com/K103598356K?dp=1" target="_blank" class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all group">
+                        <div class="bg-cyan-900/20 p-3 rounded-lg group-hover:bg-cyan-600">
+                            <i class="fas fa-piggy-bank text-cyan-500 group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-white">Prosperidade e Organização</p>
+                            <p class="text-[10px] text-slate-500">Como crescer financeiramente mesmo ganhando pouco.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-10 text-slate-600 text-[10px] uppercase tracking-[0.2em]">
+        <p>Consultoria Técnica Independente | Itaboraí</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
