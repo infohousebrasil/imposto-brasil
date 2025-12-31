@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa do Leão | Quanto você paga de Imposto?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-900 font-sans text-slate-100">
+
+    <header class="py-12 px-4 text-center">
+        <h1 class="text-3xl md:text-5xl font-black mb-2 text-red-500 uppercase tracking-tighter">Quanto você paga de Imposto?</h1>
+        <p class="text-slate-400 max-w-xl mx-auto">Descubra quanto do seu trabalho é confiscado pelo governo entre impostos diretos e ocultos.</p>
+    </header>
+
+    <main class="max-w-2xl mx-auto p-4 pb-20">
+        <div class="bg-slate-800 rounded-2xl shadow-2xl p-6 mb-8 border border-slate-700">
+            <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Seu Salário Bruto Mensal (R$)</label>
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="relative flex-grow">
+                    <span class="absolute left-4 top-3.5 text-slate-500 font-bold">R$</span>
+                    <input type="number" id="salario" placeholder="Ex: 5000" class="w-full bg-slate-900 border-2 border-slate-700 p-3 pl-12 rounded-xl outline-none focus:border-red-500 text-white font-bold text-xl transition-all">
+                </div>
+                <button onclick="calcularReal()" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-xl font-black transition-all active:scale-95 shadow-lg shadow-red-900/20">
+                    CALCULAR
+                </button>
+            </div>
+            <p class="text-[10px] text-slate-500 mt-4 text-center uppercase tracking-widest">Cálculos baseados na legislação brasileira de 2025</p>
+        </div>
+
+        <div id="resultado" class="hidden space-y-6">
+            
+            <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                <h3 class="text-slate-900 text-center font-black mb-6 uppercase tracking-tight">Onde vai parar o seu dinheiro:</h3>
+                <div class="relative h-[300px] flex justify-center">
+                    <canvas id="graficoImposto"></canvas>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-slate-800 p-5 rounded-2xl border-b-4 border-red-500 shadow-xl">
+                    <p class="text-[10px] text-slate-500 uppercase font-bold mb-1">Imposto por Ano</p>
+                    <p id="resAno" class="text-xl font-black text-red-500"></p>
+                </div>
+                <div class="bg-slate-800 p-5 rounded-2xl border-b-4 border-orange-500 shadow-xl">
+                    <p class="text-[10px] text-slate-500 uppercase font-bold mb-1">Dias para o Governo</p>
+                    <p id="resDias" class="text-xl font-black text-orange-500"></p>
+                </div>
+                <div class="bg-slate-800 p-5 rounded-2xl border-b-4 border-blue-500 shadow-xl">
+                    <p class="text-[10px] text-slate-500 uppercase font-bold mb-1">Seu Salário Real</p>
+                    <p id="resLiquido" class="text-xl font-black text-blue-400"></p>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 rounded-2xl p-6 border border-red-900/30 shadow-inner">
+                <h4 class="text-center text-red-400 font-black mb-6 uppercase tracking-widest italic text-sm">Estruturas de Defesa Financeira:</h4>
+                <div class="space-y-4">
+                    <a href="https://go.hotmart.com/W103598052B" target="_blank" class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-700 hover:border-red-500 transition-all group">
+                        <div class="bg-red-900/20 p-3 rounded-lg group-hover:bg-red-600 transition-colors">
+                            <i class="fas fa-shield-alt text-red-500 group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-white">Independência e Blindagem Fiscal</p>
+                            <p class="text-[10px] text-slate-500">Aprenda elisão fiscal e estruturas offshore legalizadas.</p>
+                        </div>
+                    </a>
+                    <a href="https://go.hotmart.com/O103598150J" target="_blank" class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-700 hover:border-emerald-500 transition-all group">
+                        <div class="bg-emerald-900/20 p-3 rounded-lg group-hover:bg-emerald-600 transition-colors">
+                            <i class="fas fa-university text-emerald-500 group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-white">Segurança Bancária e Pix</p>
+                            <p class="text-[10px] text-slate-500">Manual para evitar a malha fina e monitoramento bancário.</p>
+                        </div>
+                    </a>
+                    <a href="https://go.hotmart.com/K103598356K?dp=1" target="_blank" class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all group">
+                        <div class="bg-cyan-900/20 p-3 rounded-lg group-hover:bg-cyan-600 transition-colors">
+                            <i class="fas fa-piggy-bank text-cyan-500 group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-white">Prosperidade Financeira (Renda R$ 2k)</p>
+                            <p class="text-[10px] text-slate-500">Como multiplicar patrimônio mesmo com poucos recursos.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-10 text-slate-600 text-[10px] uppercase tracking-[0.2em]">
+        <p>Desenvolvido por Consultoria Técnica Independente | Itaboraí</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
