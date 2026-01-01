@@ -5,24 +5,30 @@ function verificarRisco() {
     const card = document.getElementById('cardRisco');
     const msg = document.getElementById('msgRisco');
 
-    if (!valor) {
-        alert("Introduza um valor de movimentação.");
+    if (!valor || valor <= 0) {
+        alert("Por favor, informe um valor de movimentação válido.");
         return;
     }
 
+    // Mostra a div de resultado com animação
     resDiv.classList.remove('hidden');
+    resDiv.classList.add('animate-fadeIn');
 
-    // Regras de Alerta 2026 (Simplificadas para conversão)
+    // Lógica de Alerta 2026
     if (perfil === 'cpf' && valor > 2000) {
-        msg.innerText = "🚨 ALERTA CRÍTICO: Movimentações superiores a R$ 2.000 em CPF são enviadas automaticamente ao Fisco via e-Financeira.";
-        card.className = "bg-red-100 text-red-900 border-2 border-red-500 rounded-xl p-6 text-center mb-6";
+        msg.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i> RISCO ALTO: Sua movimentação excede o limite de monitoramento automático do CPF pela e-Financeira.';
+        card.className = "bg-red-50 text-red-700 border-red-500 rounded-xl p-6 text-center mb-6 border-2";
     } else if (perfil === 'mei' && valor > 6750) {
-        msg.innerText = "⚠️ RISCO DE DESENQUADRAMENTO: O seu volume mensal excede a média permitida para o MEI.";
-        card.className = "bg-orange-100 text-orange-900 border-2 border-orange-500 rounded-xl p-6 text-center mb-6";
+        msg.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i> ALERTA DE DESENQUADRAMENTO: Volume mensal superior à média permitida para o regime MEI.';
+        card.className = "bg-orange-50 text-orange-700 border-orange-500 rounded-xl p-6 text-center mb-6 border-2";
     } else {
-        msg.innerText = "✅ DENTRO DO RADAR: Movimentação considerada comum para o perfil selecionado. Mantenha os seus comprovantes.";
-        card.className = "bg-green-100 text-green-900 border-2 border-green-500 rounded-xl p-6 text-center mb-6";
+        msg.innerHTML = '<i class="fas fa-check-circle mr-2"></i> MONITORAMENTO NORMAL: Suas movimentações estão dentro dos parâmetros de baixo risco atuais.';
+        card.className = "bg-emerald-50 text-emerald-700 border-emerald-500 rounded-xl p-6 text-center mb-6 border-2";
     }
 
-    window.scrollTo({ top: resDiv.offsetTop - 20, behavior: 'smooth' });
+    // Scroll suave para o resultado
+    window.scrollTo({
+        top: resDiv.offsetTop - 50,
+        behavior: 'smooth'
+    });
 }
