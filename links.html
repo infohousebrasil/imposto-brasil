@@ -3,50 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imposto Brasil - Links Úteis</title>
+    <title>Imposto Brasil - Ferramentas Inteligentes</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style_links.css">
 </head>
-<body class="bg-slate-900 text-white font-sans">
+<body class="bg-slate-900 text-white font-sans antialiased">
 
-    <div class="max-w-md mx-auto px-6 py-12 flex flex-col items-center">
+    <main class="max-w-md mx-auto min-h-screen p-6 flex flex-col items-center">
         
-        <div class="w-24 h-24 rounded-full border-4 border-red-600 overflow-hidden mb-4 shadow-xl">
-            <img src="https://github.com/SEU_USUARIO.png" alt="Perfil" class="w-full h-full object-cover">
-        </div>
-        
-        <h1 class="text-xl font-black mb-1">@impostobrasil2026</h1>
-        <p class="text-slate-400 text-sm mb-8 text-center italic">Ferramentas técnicas para você não ser pego pelo leão.</p>
+        <header class="text-center mb-10 mt-8 animate-fade-down">
+            <div class="relative w-28 h-28 mx-auto mb-4">
+                <div class="absolute inset-0 rounded-full border-4 border-slate-700"></div>
+                <img src="https://github.com/infohousebrasil.png" alt="Foto Perfil" class="w-full h-full rounded-full object-cover p-1">
+                <div class="absolute bottom-0 right-0 bg-green-500 w-6 h-6 rounded-full border-4 border-slate-900"></div>
+            </div>
+            <h1 class="text-2xl font-black tracking-tight text-white">@impostobrasil2026</h1>
+            <p class="text-slate-400 text-sm mt-2 font-medium">Ferramentas que blindam seu CPF/CNPJ do Fisco.</p>
+        </header>
 
-        <div class="w-full space-y-4">
+        <nav class="w-full space-y-5 animate-fade-up">
             
-            <a href="pix.html" class="link-card bg-red-600 hover:bg-red-700">
-                <i class="fas fa-search-dollar mr-3"></i>
-                <span>Monitor PIX 2026 (Grátis)</span>
+            <a href="pix.html" class="card-link group bg-gradient-to-r from-red-700 to-red-600 ring-2 ring-red-500/20">
+                <div class="icon-box bg-red-900/50 text-red-100">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="flex-1 ml-4">
+                    <h3 class="font-bold text-lg text-white">ALERTA PIX 2026</h3>
+                    <p class="text-red-100 text-xs opacity-90">Evite a nova malha fina bancária</p>
+                </div>
+                <div class="arrow group-hover:translate-x-1 transition-transform">
+                    <i class="fas fa-chevron-right text-white/50"></i>
+                </div>
             </a>
 
-            <a href="importacao.html" class="link-card bg-white text-slate-900 hover:bg-slate-200">
-                <i class="fas fa-calculator mr-3 text-red-600"></i>
-                <span class="font-bold">Calculadora de Taxação 2025</span>
+            <a href="importacao.html" class="card-link group bg-white ring-2 ring-white/20">
+                <div class="icon-box bg-slate-100 text-slate-900">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="flex-1 ml-4">
+                    <h3 class="font-bold text-lg text-slate-900">Calculadora de Imposto</h3>
+                    <p class="text-slate-500 text-xs">Simulação Real: China & EUA</p>
+                </div>
+                <div class="arrow group-hover:translate-x-1 transition-transform">
+                    <i class="fas fa-chevron-right text-slate-400"></i>
+                </div>
             </a>
 
-            <a href="https://go.hotmart.com/K103598356K?dp=1" target="_blank" class="link-card bg-gradient-to-r from-orange-500 to-yellow-500">
-                <i class="fas fa-unlock-alt mr-3"></i>
-                <span>Método: Pague Menos Imposto</span>
+            <a href="https://go.hotmart.com/K103598356K?dp=1" target="_blank" class="card-link group bg-gradient-to-r from-amber-500 to-orange-600 ring-2 ring-orange-400/20">
+                <div class="icon-box bg-orange-700/30 text-white">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <div class="flex-1 ml-4">
+                    <h3 class="font-bold text-lg text-white">MAPA DO LEÃO</h3>
+                    <p class="text-orange-50 text-xs opacity-90">Método para pagar menos (Legalmente)</p>
+                </div>
+                <div class="arrow group-hover:translate-x-1 transition-transform">
+                    <i class="fas fa-chevron-right text-white/50"></i>
+                </div>
             </a>
 
-        </div>
+        </nav>
 
-        <div class="mt-12 flex gap-6 text-2xl">
-            <a href="https://instagram.com/impostobrasil2026" class="hover:text-red-500 transition-colors"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="hover:text-red-500 transition-colors"><i class="fab fa-whatsapp"></i></a>
-        </div>
-
-        <footer class="mt-16 text-slate-500 text-[10px] uppercase tracking-widest">
-            Desenvolvido por Imposto Brasil
+        <footer class="mt-auto py-8 flex gap-6 text-slate-500">
+            <a href="https://instagram.com/impostobrasil2026" class="text-2xl hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-2xl hover:text-white transition-colors"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="text-2xl hover:text-white transition-colors"><i class="far fa-envelope"></i></a>
         </footer>
-    </div>
+
+    </main>
 
 </body>
 </html>
