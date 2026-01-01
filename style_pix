@@ -1,0 +1,31 @@
+/* Específico para Monitor PIX 2026 */
+body {
+    background-color: #f1f5f9 !important; /* Cinza claro para dar contraste */
+    margin: 0;
+    padding: 0;
+}
+
+.bg-gradient-tech-pix {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-bottom: 4px solid #dc2626; /* Linha vermelha de alerta */
+}
+
+#resultadoPix.hidden {
+    display: none;
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Garante que o texto dentro dos alertas seja legível */
+.alert-card {
+    border-width: 2px;
+    border-style: solid;
+    transition: all 0.3s ease;
+}
