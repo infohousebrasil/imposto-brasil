@@ -115,3 +115,21 @@ function reordenarLinksETexts(salario) {
         alta.classList.add('link-destaque');
     }
 }
+function compartilharImpostoDeRenda() {
+    // Captura os valores da sua lógica de cálculo
+    const ganhoBruto = document.getElementById('ganhoMensal').value;
+    const valorImposto = document.getElementById('valorImpostoCalculado').innerText;
+    const diasTrabalhadosParaOGoverno = document.getElementById('diasGoverno').innerText; // Ex: "12 dias"
+
+    const urlSite = window.location.href;
+
+    const texto = encodeURIComponent(
+        "💸 *TRABALHANDO PRO GOVERNO?*\n\n" +
+        "Fiz o cálculo aqui e descobri que dos meus R$ " + ganhoBruto + " mensais, o governo leva *R$ " + valorImposto + "*.\n\n" +
+        "Basicamente, eu trabalho *" + diasTrabalhadosParaOGoverno + "* todo mês só pra pagar imposto. 🤡\n\n" +
+        "Veja quanto do seu suor está ficando com o leão:\n" +
+        "👉 " + urlSite
+    );
+    
+    window.open("https://api.whatsapp.com/send?text=" + texto, "_blank");
+}
