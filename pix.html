@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style_pix.css?v=1.0">
+</head>
+<body class="bg-slate-100">
+    <header class="bg-gradient-tech-pix py-12 px-4 text-center">
+        <h1 class="text-3xl font-black text-white">Monitor PIX 2026 🔍</h1>
+        <p class="text-slate-400 text-sm">Proteja seu CPF do radar da e-Financeira.</p>
+    </header>
+    ```
+
+---
+
+### 3. Mantenha o `style.css` original apenas para a calculadora
+No seu arquivo `index.html` (o da importação), certifique-se de que ele está chamando o `style.css` original.
+
+### Por que fazer assim?
+* **Isolamento:** Se você decidir mudar a cor do botão da calculadora, não corre o risco de estragar o layout do PIX.
+* **Performance:** O navegador carrega apenas o que é necessário para aquela página.
+* **Organização de Veterano:** É muito mais fácil dar manutenção em arquivos de 20 linhas do que em um de 200.
+
+**Dica de Debug:** Se o fundo continuar branco no celular, limpe o cache do navegador ou mude o nome do arquivo para `style_pix_v2.css` no HTML. O cache do GitHub Pages às vezes é teimoso.
+
+**Conseguiu separar os arquivos? Me avise se o layout do PIX finalmente "desgrudou" do fundo branco!**
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar do Fisco 2026 - Monitor PIX</title>
