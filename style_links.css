@@ -1,27 +1,58 @@
+/* Fundo Global Profissional */
 body {
-    background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+    background-color: #0f172a; /* Slate 900 */
+    background-image: radial-gradient(at top center, #1e293b 0%, #0f172a 70%);
     min-height: 100vh;
 }
 
-.link-card {
+/* Estrutura do Card */
+.card-link {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-radius: 16px; /* Bordas bem arredondadas estilo iOS */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    text-decoration: none;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* Efeito elástico */
+}
+
+/* Efeito ao clicar/tocar */
+.card-link:active {
+    transform: scale(0.98);
+}
+
+.card-link:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* Caixa do Ícone (Quadrada com cantos arredondados) */
+.icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 18px;
-    border-radius: 12px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    text-decoration: none;
+    font-size: 1.25rem;
+    flex-shrink: 0; /* Impede o ícone de amassar */
 }
 
-.link-card:hover {
-    transform: scale(1.03);
+/* Animações de Entrada */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.link-card i {
-    font-size: 1.2rem;
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-down {
+    animation: fadeDown 0.8s ease-out;
+}
+
+.animate-fade-up {
+    animation: fadeUp 0.8s ease-out 0.2s backwards; /* 0.2s de delay */
 }
