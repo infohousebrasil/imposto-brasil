@@ -3,59 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radar do Fisco 2026 - Simulação de Risco PIX</title>
+    <title>Radar do Fisco 2026 - Monitor PIX</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.2">
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
+<body class="bg-slate-100 font-sans text-slate-900">
 
-    <header class="bg-gradient-tech py-10 px-4 text-center text-white">
-        <h1 class="text-3xl font-bold mb-2">Monitor PIX 2026 🔍</h1>
-        <p class="text-slate-400 text-sm">Verifique se as suas movimentações estão no radar da e-Financeira.</p>
+    <header class="bg-slate-900 py-12 px-4 text-center border-b-4 border-red-600">
+        <h1 class="text-3xl font-extrabold mb-2 text-white">Monitor PIX 2026 🔍</h1>
+        <p class="text-slate-400 text-sm max-w-md mx-auto">Verifique se suas movimentações bancárias estão no radar de cruzamento da e-Financeira.</p>
     </header>
 
     <main class="max-w-2xl mx-auto -mt-8 p-4">
-        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
-            <div class="space-y-4">
+        <div class="bg-white rounded-xl shadow-2xl p-6 mb-6 border border-slate-200">
+            <div class="space-y-5">
                 <div>
-                    <label class="block text-sm font-semibold mb-1">Movimentação Mensal (R$)</label>
-                    <input type="number" id="movimentacao" placeholder="Ex: 5000" class="w-full border p-2 rounded outline-none focus:ring-2 focus:ring-red-500">
+                    <label class="block text-sm font-bold text-slate-700 mb-1 italic">Movimentação Mensal Média (R$)</label>
+                    <input type="number" id="movimentacao" placeholder="Ex: 3500" class="w-full border-2 border-slate-200 p-3 rounded-lg outline-none focus:border-red-500 transition-all text-lg">
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-semibold mb-1">Tipo de Conta / Perfil</label>
-                    <select id="perfil" class="w-full border p-2 rounded outline-none focus:ring-2">
+                    <label class="block text-sm font-bold text-slate-700 mb-1 italic">Perfil da Conta</label>
+                    <select id="perfil" class="w-full border-2 border-slate-200 p-3 rounded-lg outline-none focus:border-red-500 bg-white">
                         <option value="cpf">Pessoa Física (CPF)</option>
                         <option value="mei">MEI (Microempreendedor)</option>
-                        <option value="autonomo">Autônomo (Sem CNPJ)</option>
+                        <option value="autonomo">Profissional Autônomo</option>
                     </select>
                 </div>
 
-                <button onclick="verificarRisco()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-transform active:scale-95">
-                    Analisar Alerta de Fisco
+                <button onclick="verificarRisco()" class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-4 rounded-lg uppercase tracking-widest shadow-lg transition-transform active:scale-95">
+                    Analisar Risco de Malha Fina
                 </button>
             </div>
         </div>
 
-        <div id="resultadoPix" class="hidden animate-fadeIn">
-            <div id="cardRisco" class="rounded-xl shadow-lg overflow-hidden p-6 text-center mb-6">
-                <p id="msgRisco" class="font-bold text-lg"></p>
+        <div id="resultadoPix" class="hidden space-y-4">
+            <div id="cardRisco" class="rounded-xl p-6 text-center border-2">
+                <p id="msgRisco" class="font-black text-xl leading-tight"></p>
             </div>
 
-            <div class="bg-blue-900 p-6 rounded-xl shadow-lg text-white text-center">
-                <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">Atenção ao CPF/CNPJ</h4>
-                <p class="text-sm opacity-90 mb-4">Evite bloqueios bancários e multas da Receita Federal em 2026.</p>
-                <a href="https://go.hotmart.com/K103598356K?dp=1" target="_blank" class="inline-block bg-yellow-500 text-blue-900 font-bold px-6 py-2 rounded-full shadow hover:bg-yellow-400 transition-colors">
-                    Saber Como Agir →
+            <div class="bg-slate-900 p-8 rounded-xl shadow-2xl text-white text-center border-t-4 border-yellow-500">
+                <h4 class="font-black mb-3 text-lg text-yellow-500 uppercase">Atenção ao Bloqueio de Conta</h4>
+                <p class="text-sm text-slate-300 mb-6">Em 2026, a Receita Federal utiliza IA para identificar divergências entre PIX e Declaração em tempo real.</p>
+                <a href="https://go.hotmart.com/K103598356K?dp=1" target="_blank" class="inline-block w-full bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-black py-4 rounded-full text-lg shadow-xl transition-all">
+                    VER MÉTODO DE REGULARIZAÇÃO →
                 </a>
             </div>
         </div>
     </main>
 
-    <footer class="text-center py-10 text-gray-400 text-sm">
-        <p>Dados simulados conforme normas do BC e Receita para 2026.</p>
-        <a href="index.html" class="text-blue-500 underline mt-2 block italic">Voltar para Calculadora de Imposto</a>
+    <footer class="text-center py-12 text-slate-500 text-xs">
+        <p>© 2026 Imposto Brasil - Dados simulados conforme normas do BC.</p>
+        <div class="mt-4 flex justify-center gap-4">
+            <a href="index.html" class="text-red-600 font-bold underline">Calculadora de Importação</a>
+            <a href="https://instagram.com/impostobrasil2026" class="text-red-600 font-bold underline">Instagram</a>
+        </div>
     </footer>
 
     <script src="script_pix.js"></script>
